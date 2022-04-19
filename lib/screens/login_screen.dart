@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_auth/services/auth_services.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({ Key? key }) : super(key: key);
-
+  LoginPage({ Key? key }) : super(key: key);
+  AuthServices _auth = AuthServices();
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -10,7 +13,19 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          
+          SizedBox(height: 200,),
+          Text(user.email!),
+          SizedBox(height: 20,),
+          InkWell(
+            onTap: () {
+              _auth.SignOut();
+            },
+            child: Container(
+              height: 80,
+              width: 80,
+              child: Text("Logout"),
+            ),
+          )
         ],
       ),
     );
