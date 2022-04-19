@@ -69,7 +69,11 @@ class HomePage extends StatelessWidget {
                 color: Colors.red,
                 child: Text("Sign up??"),
               ),
-            )
+            ),
+            SizedBox(height: 60,),
+            GestureDetector(
+              
+            ),
           ],
         ),
       ),
