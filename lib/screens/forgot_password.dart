@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../services/auth_services.dart';
@@ -25,7 +26,7 @@ class ForgotPassword extends StatelessWidget {
               decoration: const InputDecoration(
                   labelText: "Email", hintText: "Enter Your email"),
             ),
-            
+
             const SizedBox(
               height: 40,
             ),
@@ -34,6 +35,7 @@ class ForgotPassword extends StatelessWidget {
               child: InkWell(
                 onTap: () async {
                   _auth.forgotPas(email: emailController.text.trim());
+                  Fluttertoast.showToast(msg: "Email Sent!");
                   Get.back();
                 },
                 child: Container(
