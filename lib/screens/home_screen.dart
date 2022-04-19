@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_auth/services/auth_services.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({ Key? key }) : super(key: key);
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
+  AuthServices _auth = AuthServices();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
       
             Align(alignment: Alignment.center, child: InkWell(
               onTap: () {
-                
+                _auth.SignIn(email: emailController.text, password: passwordController.text);
               },
               child: Container(
                 width: 70,
