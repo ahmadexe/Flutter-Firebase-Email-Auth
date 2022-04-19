@@ -31,6 +31,12 @@ class HomePage extends StatelessWidget {
             height: 40,
           ),
 
+          Align(alignment: Alignment.center, child: Container(
+            width: 70,
+            height: 60,
+            color: Colors.blue,
+            child: Align(alignment: Alignment.center, child: Text("LOGIN"),),
+          ),)
           
         ],
       ),
