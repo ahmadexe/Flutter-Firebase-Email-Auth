@@ -5,8 +5,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Material(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          SizedBox(
+            height: 100,
+          ),
+          
+        ],
+      ),
     );
   }
 }

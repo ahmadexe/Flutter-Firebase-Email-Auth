@@ -10,6 +10,5 @@ class AuthServices{
     } catch (e) {
       print(e.toString());
     }
-
   }
 }
