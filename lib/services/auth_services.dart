@@ -14,19 +14,19 @@ class AuthServices {
 
   Future Signup({required email, required password}) async {
     try {
-      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } catch (e) {
       print(e.toString());
     }
   }
 
   Future forgotPas({required email}) async {
-    try{
+    try {
       await _auth.sendPasswordResetEmail(email: email);
     } catch (e) {
       print(e.toString());
     }
-
   }
 
   SignOut() {
