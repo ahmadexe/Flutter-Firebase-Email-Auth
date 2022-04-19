@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../services/auth_services.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -32,6 +34,7 @@ class ForgotPassword extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   _auth.forgotPas(email: emailController.text.trim());
+                  Get.back();
                 },
                 child: Container(
                   width: 70,
