@@ -13,6 +13,18 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
+          TextField(
+            textInputAction: TextInputAction.next,
+            decoration: InputDecoration(labelText: "Email", hintText: "Enter Your email"),
+          ),
+          TextField(
+            obscureText: true,
+            textInputAction: TextInputAction.done,
+            decoration: InputDecoration(labelText: "Password", hintText: "Enter Your Password"),
+          ),
+          SizedBox(
+            height: 40,
+          ),
           
         ],
       ),
