@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_auth/services/auth_services.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({ Key? key }) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
   AuthServices _auth = AuthServices();
   final user = FirebaseAuth.instance.currentUser!;
   @override
@@ -13,9 +13,13 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 200,),
+          SizedBox(
+            height: 200,
+          ),
           Text(user.email!),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           InkWell(
             onTap: () {
               _auth.SignOut();
@@ -24,6 +28,7 @@ class LoginPage extends StatelessWidget {
               height: 80,
               width: 80,
               child: Text("Logout"),
+              color: Colors.blue,
             ),
           )
         ],
