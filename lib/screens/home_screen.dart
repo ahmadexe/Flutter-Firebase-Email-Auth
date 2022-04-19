@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_auth/screens/forgot_password.dart';
 import 'package:flutter_email_auth/screens/signup_screen.dart';
 import 'package:flutter_email_auth/services/auth_services.dart';
 import 'package:get/get.dart';
@@ -72,7 +73,11 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 60,),
             GestureDetector(
-              
+              child: Text("Forgot Password?",
+              style: TextStyle(color: Colors.cyan[900], decoration: TextDecoration.underline),),
+              onTap: () {
+                Get.to(ForgotPassword());
+              },
             ),
           ],
         ),
