@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../services/auth_services.dart';
 
@@ -42,6 +43,8 @@ class SignUp extends StatelessWidget {
                   await _auth.Signup(
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
+
+                  Get.back();
                 },
                 child: Container(
                   width: 70,
