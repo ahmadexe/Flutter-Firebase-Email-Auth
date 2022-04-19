@@ -32,7 +32,7 @@ class ForgotPassword extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
                   _auth.forgotPas(email: emailController.text.trim());
                   Get.back();
                 },
