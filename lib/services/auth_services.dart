@@ -11,4 +11,7 @@ class AuthServices{
       print(e.toString());
     }
   }
+  SignOut() {
+    _auth.signOut();
+  }
 }
