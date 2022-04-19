@@ -1,5 +1,5 @@
 import 'dart:math';
-
+import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthServices {
@@ -18,6 +18,15 @@ class AuthServices {
     } catch (e) {
       print(e.toString());
     }
+  }
+
+  Future forgotPas({required email}) async {
+    try{
+      await _auth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      print(e.toString());
+    }
+
   }
 
   SignOut() {
