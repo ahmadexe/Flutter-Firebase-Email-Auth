@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../services/auth_services.dart';
 
 class ForgotPassword extends StatelessWidget {
-  ForgotPassword({ Key? key }) : super(key: key);
+  ForgotPassword({Key? key}) : super(key: key);
   final emailController = TextEditingController();
   AuthServices _auth = AuthServices();
   @override
@@ -26,7 +26,6 @@ class ForgotPassword extends StatelessWidget {
               decoration: const InputDecoration(
                   labelText: "Email", hintText: "Enter Your email"),
             ),
-
             const SizedBox(
               height: 40,
             ),
@@ -48,7 +47,7 @@ class ForgotPassword extends StatelessWidget {
                   ),
                 ),
               ),
-            ),           
+            ),
           ],
         ),
       ),
