@@ -38,8 +38,8 @@ class SignUp extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: InkWell(
-                onTap: () {
-                  _auth.SignIn(
+                onTap: () async {
+                  await _auth.Signup(
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
                 },

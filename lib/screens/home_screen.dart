@@ -1,5 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_auth/screens/signup_screen.dart';
 import 'package:flutter_email_auth/services/auth_services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -52,6 +56,18 @@ class HomePage extends StatelessWidget {
                     child: Text("LOGIN"),
                   ),
                 ),
+              ),
+            ),
+            SizedBox(height: 60,),
+            InkWell(
+              onTap: () {
+                Get.to(SignUp());
+              },
+              child: Container(
+                height: 80,
+                width: 80,
+                color: Colors.red,
+                child: Text("Sign up??"),
               ),
             )
           ],

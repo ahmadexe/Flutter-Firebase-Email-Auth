@@ -12,7 +12,7 @@ class AuthServices {
     }
   }
 
-  Future SignUp({required email, required password}) async {
+  Future Signup({required email, required password}) async {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } catch (e) {
