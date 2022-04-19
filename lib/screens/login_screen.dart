@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               height: 80,
               width: 80,
-              child: const Text("Logout"),
+              child: const Text("Log out!"),
               color: Colors.blue,
             ),
           )
