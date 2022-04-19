@@ -13,11 +13,11 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 200,
           ),
           Text(user.email!),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           InkWell(
@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               height: 80,
               width: 80,
-              child: Text("Logout"),
+              child: const Text("Logout"),
               color: Colors.blue,
             ),
           )
