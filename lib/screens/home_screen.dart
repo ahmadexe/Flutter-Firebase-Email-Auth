@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  HomePage({ Key? key }) : super(key: key);
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -9,22 +12,25 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          SizedBox(
+        children: [
+          const SizedBox(
             height: 100,
           ),
           TextField(
+            controller: emailController,
             textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: "Email", hintText: "Enter Your email"),
+            decoration: const InputDecoration(labelText: "Email", hintText: "Enter Your email"),
           ),
           TextField(
+            controller: passwordController,
             obscureText: true,
             textInputAction: TextInputAction.done,
-            decoration: InputDecoration(labelText: "Password", hintText: "Enter Your Password"),
+            decoration: const InputDecoration(labelText: "Password", hintText: "Enter Your Password"),
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
+
           
         ],
       ),
