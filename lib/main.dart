@@ -26,9 +26,6 @@ class MyApp extends StatelessWidget {
           return HomePage();
         }
       },
-    )
-        // home: HomePage(),
-        // home: LoginPage(),
-        );
+    ));
   }
 }
