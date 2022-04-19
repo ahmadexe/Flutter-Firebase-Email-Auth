@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../services/auth_services.dart';
 
 class SignUp extends StatelessWidget {
-  SignUp({ Key? key }) : super(key: key);
+  SignUp({Key? key}) : super(key: key);
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   AuthServices _auth = AuthServices();
@@ -61,6 +61,5 @@ class SignUp extends StatelessWidget {
         ),
       ),
     );
-
   }
 }
