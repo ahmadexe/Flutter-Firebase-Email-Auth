@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_auth/services/auth_services.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({ Key? key }) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   AuthServices _auth = AuthServices();
@@ -22,30 +22,38 @@ class HomePage extends StatelessWidget {
             TextField(
               controller: emailController,
               textInputAction: TextInputAction.next,
-              decoration: const InputDecoration(labelText: "Email", hintText: "Enter Your email"),
+              decoration: const InputDecoration(
+                  labelText: "Email", hintText: "Enter Your email"),
             ),
             TextField(
               controller: passwordController,
               obscureText: true,
               textInputAction: TextInputAction.done,
-              decoration: const InputDecoration(labelText: "Password", hintText: "Enter Your Password"),
+              decoration: const InputDecoration(
+                  labelText: "Password", hintText: "Enter Your Password"),
             ),
             const SizedBox(
               height: 40,
             ),
-      
-            Align(alignment: Alignment.center, child: InkWell(
-              onTap: () {
-                _auth.SignIn(email: emailController.text.trim(), password: passwordController.text.trim());
-              },
-              child: Container(
-                width: 70,
-                height: 60,
-                color: Colors.blue,
-                child: Align(alignment: Alignment.center, child: Text("LOGIN"),),
+            Align(
+              alignment: Alignment.center,
+              child: InkWell(
+                onTap: () {
+                  _auth.SignIn(
+                      email: emailController.text.trim(),
+                      password: passwordController.text.trim());
+                },
+                child: Container(
+                  width: 70,
+                  height: 60,
+                  color: Colors.blue,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text("LOGIN"),
+                  ),
+                ),
               ),
-            ),)
-            
+            )
           ],
         ),
       ),
