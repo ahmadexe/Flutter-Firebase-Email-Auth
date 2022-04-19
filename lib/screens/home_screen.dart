@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Padding(
-        padding: EdgeInsets.all(32),
+        padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,14 +52,16 @@ class HomePage extends StatelessWidget {
                   width: 70,
                   height: 60,
                   color: Colors.blue,
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text("LOGIN"),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 60,),
+            const SizedBox(
+              height: 60,
+            ),
             InkWell(
               onTap: () {
                 Get.to(SignUp());
@@ -68,13 +70,19 @@ class HomePage extends StatelessWidget {
                 height: 80,
                 width: 80,
                 color: Colors.red,
-                child: Text("Sign up??"),
+                child: const Text("Sign up??"),
               ),
             ),
-            SizedBox(height: 60,),
+            const SizedBox(
+              height: 60,
+            ),
             GestureDetector(
-              child: Text("Forgot Password?",
-              style: TextStyle(color: Colors.cyan[900], decoration: TextDecoration.underline),),
+              child: Text(
+                "Forgot Password?",
+                style: TextStyle(
+                    color: Colors.cyan[900],
+                    decoration: TextDecoration.underline),
+              ),
               onTap: () {
                 Get.to(ForgotPassword());
               },
