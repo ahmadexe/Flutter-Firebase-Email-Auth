@@ -12,6 +12,14 @@ class AuthServices {
     }
   }
 
+  Future SignUp({required email, required password}) async {
+    try {
+      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   SignOut() {
     _auth.signOut();
   }
