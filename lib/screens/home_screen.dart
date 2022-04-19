@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
       
             Align(alignment: Alignment.center, child: InkWell(
               onTap: () {
-                _auth.SignIn(email: emailController.text, password: passwordController.text);
+                _auth.SignIn(email: emailController.text.trim(), password: passwordController.text.trim());
               },
               child: Container(
                 width: 70,
