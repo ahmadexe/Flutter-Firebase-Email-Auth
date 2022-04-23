@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
               child: Text(
                 "Forgot Password?",
                 style: TextStyle(
-                    color: Colors.cyan[900],
+                    color: Colors.cyan,
                     decoration: TextDecoration.underline),
               ),
               onTap: () {

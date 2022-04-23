@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 import '../services/auth_services.dart';
@@ -7,6 +9,9 @@ class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  User? user = FirebaseAuth.instance.currentUser;
+
   AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
@@ -44,7 +49,10 @@ class SignUp extends StatelessWidget {
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
 
-                  Get.back();
+                  Fluttertoast.showToast(msg: "A link has been sent to you! Click on it to register!");
+                  
+                    Get.back();
+                  
                 },
                 child: Container(
                   width: 70,
