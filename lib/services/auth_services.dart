@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 
 class AuthServices {
+  Timer? timer;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   Future SignIn({required email, required password}) async {
     try {
@@ -20,6 +22,7 @@ class AuthServices {
           email: email, password: password);
 
       User? user = FirebaseAuth.instance.currentUser;
+      Fluttertoast.showToast(msg: "SENT");
       user!.sendEmailVerification();
       
     } catch (e) {

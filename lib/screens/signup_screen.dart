@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_auth/screens/home_screen.dart';
@@ -12,7 +14,7 @@ class SignUp extends StatelessWidget {
   final passwordController = TextEditingController();
 
   User? user = FirebaseAuth.instance.currentUser;
-
+  Timer? timer;
   AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,13 @@ class SignUp extends StatelessWidget {
                   await _auth.Signup(
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
-                    Get.to(HomePage());
+                  timer = Timer(Duration(seconds: 3), () async {
+                    await user!.reload();
+                    if (user!.emailVerified) {
+                      timer!.cancel();
+                    }
+                  });
+                  Get.to(HomePage());
                 },
                 child: Container(
                   width: 70,
