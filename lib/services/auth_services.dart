@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 class AuthServices {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -8,7 +10,7 @@ class AuthServices {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      print(e.toString());
+      Fluttertoast.showToast(msg: e.toString());
     }
   }
 
