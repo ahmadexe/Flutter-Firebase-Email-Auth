@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_auth/screens/home_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +12,6 @@ class SignUp extends StatelessWidget {
   final passwordController = TextEditingController();
 
   User? user = FirebaseAuth.instance.currentUser;
-
 
   AuthServices _auth = AuthServices();
   @override
@@ -49,8 +49,7 @@ class SignUp extends StatelessWidget {
                   await _auth.Signup(
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
-                    Get.back();
-                  
+                    Get.to(HomePage());
                 },
                 child: Container(
                   width: 70,

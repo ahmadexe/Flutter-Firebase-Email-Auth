@@ -18,6 +18,10 @@ class AuthServices {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+
+      User? user = FirebaseAuth.instance.currentUser;
+      user!.sendEmailVerification();
+      
     } catch (e) {
       print(e.toString());
     }
