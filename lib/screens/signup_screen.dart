@@ -12,6 +12,7 @@ class SignUp extends StatelessWidget {
 
   User? user = FirebaseAuth.instance.currentUser;
 
+
   AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
@@ -48,9 +49,6 @@ class SignUp extends StatelessWidget {
                   await _auth.Signup(
                       email: emailController.text.trim(),
                       password: passwordController.text.trim());
-
-                  Fluttertoast.showToast(msg: "A link has been sent to you! Click on it to register!");
-                  
                     Get.back();
                   
                 },
